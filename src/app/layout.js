@@ -1,6 +1,8 @@
 // src/app/layout.js
-import './globals.css'; // Global CSS untuk seluruh aplikasi
-import './styles/layout.css'; // CSS tambahan untuk layout
+import '../styles/globals.css'; // Impor file CSS global dengan path yang benar
+import '../styles/layout.css';  // Impor file CSS layout dengan path yang benar
+
+
 
 export const metadata = {
   title: 'PT Sarana Komunikasi Data',
