@@ -1,50 +1,33 @@
 // src/app/layout.js
-import Link from 'next/link';
-import './globals.css';
+import './globals.css'; // Global CSS untuk seluruh aplikasi
+import './styles/layout.css'; // CSS tambahan untuk layout
 
-export default function Layout({ children }) {
+export const metadata = {
+  title: 'PT Sarana Komunikasi Data',
+  description: 'Solusi Teknologi Terbaik untuk Berbagai Industri.',
+};
+
+export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <head>
-        <title>PT Sarana Komunikasi Data (SKD)</title>
-      </head>
+    <html lang="id">
       <body>
-        <header>
-          <nav>
-            <ul style={{ listStyle: 'none', padding: 0, display: 'flex' }}>
-              <li style={{ margin: '0 15px' }}>
-                <Link href="/">Home</Link>
-              </li>
-              <li style={{ margin: '0 15px' }}>
-                <Link href="/company/about">Company</Link>
-                <ul style={{ listStyle: 'none', padding: 0, marginTop: '5px' }}>
-                  <li><Link href="/company/about">About Us</Link></li>
-                  <li><Link href="/company/career">Career</Link></li>
-                </ul>
-              </li>
-              <li style={{ margin: '0 15px' }}>
-                <Link href="/industries/telco">Industries</Link>
-                <ul style={{ listStyle: 'none', padding: 0, marginTop: '5px' }}>
-                  <li><Link href="/industries/telco">Telecommunications</Link></li>
-                  <li><Link href="/industries/enterprise">Enterprise</Link></li>
-                </ul>
-              </li>
-              <li style={{ margin: '0 15px' }}>
-                <Link href="/solution/facilities">Solutions</Link>
-                <ul style={{ listStyle: 'none', padding: 0, marginTop: '5px' }}>
-                  <li><Link href="/solution/facilities">Facilities</Link></li>
-                  <li><Link href="/solution/power-system">Power Systems</Link></li>
-                  <li><Link href="/solution/connectivity">Connectivity</Link></li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
+        <header className="header">
+          <div className="container">
+            <h1>PT Sarana Komunikasi Data</h1>
+            <nav className="navbar">
+              <a href="/">Home</a>
+              <a href="/company/about">About</a>
+              <a href="/industries/telco">Industries</a>
+              <a href="/solution/facilities">Solutions</a>
+              <a href="/company/career">Careers</a>
+            </nav>
+          </div>
         </header>
-
-        <main>{children}</main>
-
-        <footer style={{ padding: '20px', textAlign: 'center', background: '#f1f1f1' }}>
-          <p>&copy; 2024 PT Sarana Komunikasi Data (SKD) - All Rights Reserved</p>
+        <main className="content">{children}</main>
+        <footer className="footer">
+          <div className="container">
+            <p>&copy; {new Date().getFullYear()} PT Sarana Komunikasi Data</p>
+          </div>
         </footer>
       </body>
     </html>

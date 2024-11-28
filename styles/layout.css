@@ -1,0 +1,25 @@
+/* styles/layout.css */
+.header {
+    background-color: #004080;
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  .navbar {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar a {
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  .footer {
+    background-color: #202020;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+  }
+  
