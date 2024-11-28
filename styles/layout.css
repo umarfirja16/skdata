@@ -1,25 +1,80 @@
-/* styles/layout.css */
-.header {
-    background-color: #004080;
-    color: #fff;
-    padding: 20px 0;
-  }
-  
-  .navbar {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .navbar a {
-    color: #fff;
-    font-weight: bold;
-  }
-  
-  .footer {
-    background-color: #202020;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 50px;
-  }
-  
+/* File: styles/layout.css */
+
+/* Header */
+.navbar {
+  display: flex;
+  flex-direction: column;
+  background-color: #007bff;
+  color: white;
+  padding: 1rem;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.navbar li {
+  margin-right: 1rem;
+}
+
+.navbar li:last-child {
+  margin-right: 0;
+}
+
+.dark-mode-toggle {
+  background-color: white;
+  color: black;
+  padding: 0.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* Main */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Carousel Section */
+.carousel-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-item {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 1rem;
+}
+
+.carousel button {
+  padding: 0.5rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  background-color: #000;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}

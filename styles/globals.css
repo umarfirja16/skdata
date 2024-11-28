@@ -1,27 +1,130 @@
-/* src/app/globals.css */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* globals.css */
+
+/* Impor Bootstrap */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+/* Warna dasar untuk tema */
+:root {
+  --primary-color: #f44336; /* Merah */
+  --secondary-color: #2196f3; /* Biru */
+  --light-color: #ffffff; /* Putih */
+  --dark-color: #343a40; /* Gelap */
+  --text-light: #f8f9fa;
+  --text-dark: #212529;
+  --background-light: #f8f9fa;
+  --background-dark: #212529;
+}
+
+/* Untuk mode terang */
+body.light {
+  background-color: var(--background-light);
+  color: var(--text-dark);
+}
+
+body.dark {
+  background-color: var(--background-dark);
+  color: var(--text-light);
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
 }
 
+/* Navbar */
+.navbar {
+  background-color: var(--dark-color);
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: var(--light-color) !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--secondary-color) !important;
+}
+
+/* Carousel */
+.carousel-item img {
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.carousel-section {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.carousel-section h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  margin-top: 50px;
+}
+
+/* Button untuk toggle dark/light mode */
+button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+/* Dropdown menu */
+.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.navbar-nav .nav-item .dropdown-menu {
+  background-color: var(--dark-color);
+  border: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: 300px;
+  }
+
+  .carousel-section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Global container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 15px;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+.container-fluid {
+  padding: 0;
 }
 
-h1, h2, h3 {
-  margin-bottom: 15px;
+/* Custom scrollbar for dark mode */
+body.dark {
+  scrollbar-color: #888 #212529;
+  scrollbar-width: thin;
+}
+
+body.dark::-webkit-scrollbar {
+  width: 8px;
+}
+
+body.dark::-webkit-scrollbar-thumb {
+  background-color: #888;
+}
+
+body.dark::-webkit-scrollbar-track {
+  background-color: #212529;
 }
