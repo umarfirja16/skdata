@@ -1,12 +1,10 @@
-/* File: styles/layout.css */
-
 /* Header */
 .navbar {
   display: flex;
   flex-direction: column;
-  background-color: #007bff;
+  background-color: #1a3a57; /* Sesuai dengan tema biru tua */
   color: white;
-  padding: 1rem;
+  padding: 1rem 2rem;
 }
 
 .nav-container {
@@ -23,58 +21,166 @@
 }
 
 .navbar li {
-  margin-right: 1rem;
+  margin-right: 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .navbar li:last-child {
   margin-right: 0;
 }
 
-.dark-mode-toggle {
-  background-color: white;
-  color: black;
-  padding: 0.5rem;
-  border: none;
-  cursor: pointer;
+.navbar a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
 }
 
-/* Main */
+.navbar a:hover {
+  color: #a0c4ff; /* Efek hover */
+}
+
+.dark-mode-toggle {
+  background-color: #4a4a4a; /* Warna tombol dark mode */
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  background-color: #007bff;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #004080, #0080ff);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.125rem;
+  margin-top: 1rem;
+}
+
+/* Main Content */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 2rem 1rem;
 }
 
-/* Carousel Section */
-.carousel-section {
+/* Partners Section */
+.partners-section {
   text-align: center;
-  margin: 2rem 0;
+  margin: 4rem 0;
+}
+
+.partners-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
 }
 
 .carousel {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 }
 
 .carousel-item {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin: 0 1rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .carousel button {
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   border: none;
-  background-color: #007bff;
+  background-color: #1a3a57;
   color: white;
+  border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel button:hover {
+  background-color: #007bff;
+}
+
+/* Customers Section */
+.customers-section {
+  background-color: #f7f7f7;
+  padding: 4rem 2rem;
+}
+
+.customers-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.customer-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.customer-card:hover {
+  transform: scale(1.05);
+}
+
+/* Certificates Section */
+.certificates-section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.certificates-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.certificate-card {
+  display: inline-block;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.certificate-card:hover {
+  transform: scale(1.05);
 }
 
 /* Footer */
 .footer {
-  background-color: #000;
+  background-color: #1a3a57;
   color: white;
   text-align: center;
-  padding: 1rem;
+  padding: 1.5rem 2rem;
+  font-size: 0.875rem;
+}
+
+.footer p {
+  margin: 0;
 }

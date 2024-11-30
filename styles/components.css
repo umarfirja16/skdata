@@ -1,17 +1,212 @@
-/* styles/components.css */
+/* Home Section Styles */
 .home {
-    text-align: center;
-    padding: 50px 0;
-    background: linear-gradient(135deg, #004080, #0080ff);
-    color: #fff;
+  text-align: center;
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, #004080, #0080ff);
+  color: #fff;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+html.dark .home {
+  background: linear-gradient(135deg, #002850, #005080);
+}
+
+/* Hero Text */
+.home h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.home p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+/* About Section Styles */
+.about {
+  padding: 4rem 1rem;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+html.dark .about {
+  background-color: #444;
+  color: #f7f7f7;
+}
+
+.about h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.about p {
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+/* Partner and Customer Sections */
+.partners, .customers {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.partners h2, .customers h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.partners .carousel, .customers .grid {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Card Styles */
+.partner-card, .customer-card {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.partner-card:hover, .customer-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+html.dark .partner-card, html.dark .customer-card {
+  background-color: #333;
+  color: #f7f7f7;
+}
+
+/* Certifications Section */
+.certificates {
+  padding: 4rem 1rem;
+  background-color: #fff;
+  text-align: center;
+}
+
+html.dark .certificates {
+  background-color: #444;
+}
+
+.certificates h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.certificates .certificate-card {
+  background-color: #f7f7f7;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificates .certificate-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+html.dark .certificate-card {
+  background-color: #555;
+  color: #fff;
+}
+
+/* Contact Section */
+.contact {
+  padding: 3rem 1rem;
+  background-color: #004080;
+  color: #fff;
+  text-align: center;
+}
+
+html.dark .contact {
+  background-color: #002850;
+}
+
+/* Utility Styles */
+.text-center {
+  text-align: center;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .about {
-    padding: 50px 0;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
   }
-  
-  .about p {
-    line-height: 1.6;
-    font-size: 18px;
-  }
-  
+}
+/* Carousel Container */
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 2rem 0;
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Gambar Carousel */
+.carousel-image {
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.carousel-slide:hover .carousel-image {
+  transform: scale(1.05);
+}
+
+/* Tombol Navigasi */
+.carousel-button {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-button.prev {
+  left: 0.5rem;
+}
+
+.carousel-button.next {
+  right: 0.5rem;
+}
+
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}

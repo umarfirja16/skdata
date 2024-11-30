@@ -1,130 +1,166 @@
-/* globals.css */
-
-/* Impor Bootstrap */
-@import "~bootstrap/dist/css/bootstrap.min.css";
-
-/* Warna dasar untuk tema */
-:root {
-  --primary-color: #f44336; /* Merah */
-  --secondary-color: #2196f3; /* Biru */
-  --light-color: #ffffff; /* Putih */
-  --dark-color: #343a40; /* Gelap */
-  --text-light: #f8f9fa;
-  --text-dark: #212529;
-  --background-light: #f8f9fa;
-  --background-dark: #212529;
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Untuk mode terang */
-body.light {
-  background-color: var(--background-light);
-  color: var(--text-dark);
-}
-
-body.dark {
-  background-color: var(--background-dark);
-  color: var(--text-light);
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Arial', sans-serif;
-  margin: 0;
+  line-height: 1.6;
 }
 
-/* Navbar */
-.navbar {
-  background-color: var(--dark-color);
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.navbar-brand,
-.navbar-nav .nav-link {
-  color: var(--light-color) !important;
+a:hover {
+  text-decoration: underline;
 }
 
-.navbar-nav .nav-link:hover {
-  color: var(--secondary-color) !important;
+/* Buttons */
+button {
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
 }
 
-/* Carousel */
-.carousel-item img {
-  max-height: 400px;
-  object-fit: cover;
+button:hover {
+  background-color: #4a4a4a;
+  transform: scale(1.05);
 }
 
-.carousel-section {
-  margin-top: 2rem;
+/* Light Mode */
+.bg-white {
+  background-color: #fff;
+}
+
+.text-black {
+  color: #000;
+}
+
+.text-gray-400 {
+  color: #9e9e9e;
+}
+
+.bg-blue-900 {
+  background-color: #1a3a57;
+}
+
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--from-color), var(--to-color));
+}
+
+/* Dark Mode */
+html.dark {
+  --from-color: #2c3e50;
+  --to-color: #34495e;
+}
+
+html.dark body {
+  background-color: #333;
+  color: #f7f7f7;
+}
+
+.bg-gray-800 {
+  background-color: #333;
+}
+
+.bg-gray-100 {
+  background-color: #f7f7f7;
+}
+
+.text-gray-300 {
+  color: #d1d1d1;
+}
+
+button {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+/* Cards */
+.customer-card, 
+.certificate-card {
+  background-color: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.customer-card:hover, 
+.certificate-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Utility Classes */
+.text-center {
   text-align: center;
 }
 
-.carousel-section h2 {
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
+.font-bold {
   font-weight: bold;
 }
 
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 1.5rem;
-  background-color: var(--dark-color);
-  color: var(--light-color);
-  margin-top: 50px;
+.text-lg {
+  font-size: 1.125rem;
 }
 
-/* Button untuk toggle dark/light mode */
-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 100;
+.text-xl {
+  font-size: 1.25rem;
 }
 
-/* Dropdown menu */
-.navbar-nav .nav-item.dropdown:hover .dropdown-menu {
-  display: block;
+.text-2xl {
+  font-size: 1.5rem;
 }
 
-.navbar-nav .nav-item .dropdown-menu {
-  background-color: var(--dark-color);
-  border: none;
+.text-3xl {
+  font-size: 1.875rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .carousel-item img {
-    height: 300px;
+.text-4xl {
+  font-size: 2.25rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+/* Responsive Grid for Partners, Customers, and Certifications */
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
   }
+}
 
-  .carousel-section h2 {
-    font-size: 1.5rem;
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
-/* Global container */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 15px;
-}
-
-.container-fluid {
-  padding: 0;
-}
-
-/* Custom scrollbar for dark mode */
-body.dark {
-  scrollbar-color: #888 #212529;
-  scrollbar-width: thin;
-}
-
-body.dark::-webkit-scrollbar {
-  width: 8px;
-}
-
-body.dark::-webkit-scrollbar-thumb {
-  background-color: #888;
-}
-
-body.dark::-webkit-scrollbar-track {
-  background-color: #212529;
-}
+/* Tailwind CSS Utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
